@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Poppins',sans-serif;
+    box-sizing:border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677,#4e085f);
+    padding:  10px;
+   
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 70px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app h2{
+    background-color: aliceblue;
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;    
+}
+.todo-app h2 img{
+    width: 40px;
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1; /*The div will grow in same proportion as the window-size*/
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+}
+button{
+       
+    border: none; /*butonun dış çerçevesini yok eder*/
+    outline:none;
+    padding: 16px 50px;
+    color: #fff;
+    font-size: 16px;
+    cursor:pointer;
+    border-radius: 40px;
+    background: #ff5945;
+
+}
+ul li:nth-child(odd) {
+    background: #88c5b8f1;
+    /* liste elemanlarını 1-3-5 gibi 1 er 1 er giderek yukarıda belirtilen background color ile renklendirir*/
+  }
+ul li{
+   padding: 12px 8px 12px 50px;
+   cursor: pointer;
+   list-style:none ;
+   font-size: 17px;
+    user-select: none ;
+   position: relative;
+}
+ul li::before{ /*liste elemanlarının önüne circle koyma*/
+    content: ''; /*content kullanmak zorunludur*/
+    position:absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url('images/unchecked.png');
+    background-size: cover;
+    background-position: center;
+    top:12px;
+    left:8px;
+
+}
+ul li.checked{
+    color:#555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+   background-image: url('images/checked.png'); 
+}
+ul li span{
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    width: 30px;
+    font-size: 30px;
+    color: #1f1d1d;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #d1dcf3;
+}
